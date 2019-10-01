@@ -1530,15 +1530,15 @@ router.route("/recruiment/filterallpost")
 
                     }
                     let num = array.length;
-                    let numpage = Math.floor(num / 6) + (num % 6 === 0 ? 0 : 1);
+                    let numpage = Math.floor(num / 8) + (num % 8 === 0 ? 0 : 1);
 
                     // console.log("B",numpage)
-                    if (num > 6) {
-                        if (req.body.page * 6 < num) {
+                    if (num > 8) {
+                        if (req.body.page * 8 < num) {
                             if (req.body.page === 1)
-                                arraytype = await array.slice(0, 6);
+                                arraytype = await array.slice(0, 8);
                             else if (req.body.page > 1)
-                                arraytype = await array.slice(0, req.body.page * 6);
+                                arraytype = await array.slice(0, req.body.page * 8);
 
                         }
                         else {
